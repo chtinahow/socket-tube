@@ -5,7 +5,7 @@ module.exports = (state, prev, send) => {
     <div>
       <div>
         <form id="socketForm" action="" onsubmit="onSubmit">
-          <input></input><button>Send</button>
+          <input><button>Send</button>
         </form>
 
         <script>
