@@ -1,16 +1,12 @@
 const html = require('choo/html');
 
 module.exports = (state, prev, send) => {
-
   // override the onsubmit function on the form
   const onsubmit = (event) => {
 
-    // attach to the socket.io server on localhost:9021
-    const socket = io('http://localhost:9021');
-
     // send the input value
     const input = event.target.children[0];
-    socket.emit('push-video', input.value);
+    state.socket.emit('push-video', input.value);
 
     // clear the input value
     input.value = '';
