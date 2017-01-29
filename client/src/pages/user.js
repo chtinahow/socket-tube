@@ -1,5 +1,7 @@
 const html = require('choo/html');
 
+const video = require('../components/video');
+
 module.exports = (state, prev, send) => {
   // override the onsubmit function on the form
   const onsubmit = (event) => {
@@ -15,13 +17,14 @@ module.exports = (state, prev, send) => {
     event.preventDefault();
   }
 
+  const videoDOM = video.bind(this, state, prev, send);
+
   return html`
     <div>
-      <div>
-        <form id="socketForm" action="" onsubmit=${onsubmit}>
-          <input><button>Send</button>
-        </form>
-      </div>
+      <form id="socketForm" action="" onsubmit=${onsubmit}>
+        <input><button>Send</button>
+      </form>
+      ${videoDOM()}
     </div>
   `
 }
