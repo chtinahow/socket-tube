@@ -1,15 +1,10 @@
 const html = require('choo/html');
+const { actions } = require('../models/socketModel');
 
 module.exports = (state, prev, send) => {
-
-  if (state.socket) {
-    state.socket.on('display-video', (url) => {
-      console.log(url);
-    });
-  }
-
   return html`
     <div>
+      ${state.url}
       VIDEO HERE!
     </div>
   `

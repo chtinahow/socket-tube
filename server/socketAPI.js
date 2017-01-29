@@ -8,7 +8,7 @@ io.on('connection', socket => {
 
   socket.on('push-video', url => {
     console.log(chalk.yellow(`url: ${url}`));
-    socket.emit('display-video', {url});
+    socket.emit('display-video', url);
   });
 
   socket.on('disconnect', () => {
