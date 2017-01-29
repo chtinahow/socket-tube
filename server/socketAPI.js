@@ -7,7 +7,7 @@ io.on('connection', socket => {
   console.log(chalk.blue('user connected'));
 
   socket.on('push-video', url => {
-    console.log(chalk.pink(`url: ${url}`));
+    console.log(chalk.yellow(`url: ${url}`));
     socket.emit('display-video', {url});
   });
 
