@@ -25,11 +25,13 @@ module.exports = (state, prev, send) => {
   }
 
   return html`
-    <form style=${inputStyle} action="" onsubmit=${onsubmit}>
-      <input class="form-control">
-      <button class="btn btn-danger" style=${buttonStyle}>
-        Send
-      </button>
-    </form>
+    <div class="input-group">
+      <form style=${inputStyle} action="" onsubmit=${onsubmit}>
+        <input class="form-control">
+        <button class="btn btn-danger" style=${buttonStyle}>
+          Send
+        </button>
+      </form>
+    </div>
   `
 }
